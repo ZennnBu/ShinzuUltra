@@ -7,6 +7,7 @@ in vec2 texcoord;
 in vec4 glcolor;
 
 const int shadowMapResolution = 2048;
+const float shadowDistance = 128.0;
 const float shadowDistanceRenderMul = 1.0;
 
 layout(location = 0) out vec4 color;

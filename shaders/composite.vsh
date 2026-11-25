@@ -1,15 +1,9 @@
 
-#version 330
+#version 120
 
-out vec2 texCoord;
+varying vec2 texcoord;
 
 void main() {
-    gl_Position = vec4(
-        (gl_VertexID == 1 || gl_VertexID == 2) ? 3.0 : -1.0,
-        (gl_VertexID == 2) ? 3.0 : -1.0,
-        0.0,
-        1.0
-    );
-
-    texCoord = gl_Position.xy * 0.5 + 0.5;
+    gl_Position = ftransform();
+    texcoord = gl_MultiTexCoord0.xy;
 }
